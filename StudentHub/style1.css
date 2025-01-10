@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('../images/a.png'); /* Add your image URL here */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background image stay fixed when scrolling */
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.welcome-back, .create-account {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome-back {
+    background: #6c63ff;
+    color: #fff;
+}
+
+.welcome-back h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.welcome-back p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.welcome-back button {
+    background-color: #fff;
+    color: #6c63ff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.welcome-back button:hover {
+    background-color: #6c63ff;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.create-account h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form button {
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #5a54e7;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    width: calc(100% - 50px);
+}
+
+.password-wrapper button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.password-wrapper button:hover {
+    background: #ddd;
+}
