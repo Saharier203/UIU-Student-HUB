@@ -20,7 +20,7 @@ $result = $conn->query($sql);
         </div>
         <nav>
             <a href="student_dashboard.php">Home</a>
-            <a href="create_post.php">Create Post</a>
+            <a href="add_product.php">Create Post</a>
         </nav>
     </header>
 
