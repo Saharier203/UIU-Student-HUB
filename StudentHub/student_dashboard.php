@@ -33,7 +33,7 @@ $complaints_result = $complaints_query->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
-    <link rel="stylesheet" href="css/style3.css"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/student_dashboard.css"> <!-- Link to external CSS file -->
 </head>
 <body>
     <div class="container">
@@ -43,6 +43,7 @@ $complaints_result = $complaints_query->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <nav>
                 <ul>
+                    <li><a href="profile.php">Your Profile</a></li>
                     <li><a href="complaints.php">Your Complaints</a></li>
                     <li><a href="reservations.php">Room Reservations</a></li>
                     <li><a href="events.php">Upcoming Events</a></li>
@@ -58,6 +59,11 @@ $complaints_result = $complaints_query->fetchAll(PDO::FETCH_ASSOC);
                 <h1>Welcome, <?php echo htmlspecialchars($user['FullName']); ?></h1>
             </header>
             <main>
+            <section>
+                    <h2>Your Profile</h2>
+                    <button onclick="window.location.href='profile.php'">View Profile</button>
+                </section>
+
                 <section>
                     <h2>Your Complaints</h2>
                     <button onclick="window.location.href='complaints.php'">View Complaints</button>

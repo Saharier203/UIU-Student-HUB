@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+}
+
+.profile-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cover-photo {
+    background-image: url('../images/a.png'); /* Replace with your background image path */
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-details {
+    padding: 20px;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: -60px;
+    border: 4px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.username {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.mobile, .department, .work, .university {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #777;
+}
+
+.manage-profile-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.manage-profile-btn:hover {
+    background-color: #0056b3;
+}
