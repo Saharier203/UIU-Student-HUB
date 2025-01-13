@@ -1,25 +1,36 @@
 <?php
 // Include the database connection file
-require_once 'db.php'; // Ensure db.php is in the same directory as this file
+require_once 'db.php';
+
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM Users WHERE Email = ?";
+    // Query to find the user by email
+    $sql = "SELECT * FROM Users WHERE Email = :email";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
-    $result = $stmt->get_result();
 
-    if ($row = $result->fetch_assoc()) {
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($row) {
+        // Verify the hashed password
         if (password_verify($password, $row['PasswordHash'])) {
-            echo "<p class='success'>Login successful! Welcome, " . $row['FullName'] . "</p>";
+            // Set session variables
+            $_SESSION['user_id'] = $row['UserID'];
+            $_SESSION['user_name'] = $row['FullName'];
+
+            // Redirect to the student dashboard
+            header("Location: student_dashboard.php");
+            exit;
         } else {
-            echo "<p class='error'>Invalid password.</p>";
+            $error_message = "Invalid password.";
         }
     } else {
-        echo "<p class='error'>No account found with this email.</p>";
+        $error_message = "No account found with this email.";
     }
 }
 ?>
@@ -34,6 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="login-container">
         <h2>Login</h2>
+        <?php if (isset($error_message)): ?>
+            <p class="error"><?php echo htmlspecialchars($error_message); ?></p>
+        <?php endif; ?>
         <form method="POST">
             <div class="input-group">
                 <input type="email" name="email" placeholder="Email" required>
@@ -41,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="input-group">
                 <input type="password" name="password" placeholder="Password" required>
             </div>
+
             <button type="submit" class="btn">Login</button>
         </form>
         <p>Don't have an account? <a href="registration.php">Register here</a></p>
