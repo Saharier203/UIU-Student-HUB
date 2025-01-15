@@ -1,0 +1,152 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #b11a1a;
+}
+
+/* Sliding Background */
+.slideshow {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 74%;
+    background-size: cover;
+    background-position: center;
+    animation: slide-right-to-left 15s linear infinite;
+    /* Add this to ensure slides overlap during transitions */
+    opacity: 0;
+    z-index: 0;
+}
+
+/* Individual Slide Backgrounds */
+.slide1 {
+    background-image: url('../images/a.png'); /* Replace with your image */
+    animation-delay: 0s;
+}
+.slide2 {
+    background-image: url('../images/b.png'); /* Replace with your image */
+    animation-delay: 5s;
+}
+.slide3 {
+    background-image: url('../images/c.png'); /* Replace with your image */
+    animation-delay: 10s;
+}
+
+/* Keyframes for seamless transition */
+@keyframes slide-right-to-left {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0%);
+        opacity: 1; /* Fully visible */
+        z-index: 1; /* Bring to front */
+    }
+    30% {
+        transform: translateX(0%);
+        opacity: 1; /* Stay fully visible */
+    }
+    40% {
+        transform: translateX(-100%);
+        opacity: 0; /* Start fading out */
+        z-index: 0; /* Move to back */
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+
+/* Keyframes for Sliding */
+@keyframes slide {
+    0%, 20% {
+        opacity: 1;
+    }
+    33%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Header */
+header {
+    background-color: rgba(242, 101, 34, 0.8);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+header .contact-info div {
+    margin-right: 15px;
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+}
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    color: rgb(231, 108, 6);
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Contact Section */
+.contact-container {
+    padding: 40px 20px;
+    /* background: rgb(189, 180, 180); */
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.contact-info h2 {
+    color: #f26522;
+}
+
+/* Footer */
+footer {
+    background-color: #f26522;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}

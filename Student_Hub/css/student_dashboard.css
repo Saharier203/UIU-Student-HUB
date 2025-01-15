@@ -1,0 +1,196 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #4CAF50; /* Greenish color for sidebar */
+    width: 220px;
+    padding-top: 40px;
+    color: white;
+    height: 100%;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+    text-align: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #388E3C;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.profile-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.cover-photo {
+    height: 250px;
+    background-color: #66BB6A; /* Lighter green for cover photo */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.profile-details {
+    padding: 30px;
+    text-align: center;
+}
+
+.profile-details img.profile-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    margin-top: -80px;
+}
+
+.profile-details .name {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+}
+
+.profile-details .username {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #777;
+    margin-top: 10px;
+}
+
+.profile-details .mobile,
+.profile-details .department,
+.profile-details .work,
+.profile-details .university {
+    font-weight: 500;
+}
+
+.manage-profile-btn {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.manage-profile-btn:hover {
+    background-color: #388E3C;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 22px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .profile-container {
+        margin: 20px;
+    }
+
+    .profile-details img.profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-details .name {
+        font-size: 24px;
+    }
+}
